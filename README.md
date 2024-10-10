@@ -2,11 +2,11 @@
 **Case study: How does a bike-share company navigate speedy success?**
 The final capstone project for the Google Data Analytics Professional Certificate on Coursera.
 
-##Scenario
+## Scenario
 
 The marketing analyst team at Cyclistic, a bike-share company in Chicago, is led by Director Lily Moreno. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes dierently. From these insights, your team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations
 
-##Background
+## Background
 
 Cyclistic is a fictional bike-share company that was launched in Chicago of 2016. This program now owns over 5,000 bicycles and over 600 docking stations. Cyclistic is unique in that if offers bicycles that are inclusive of disabilities, including reclining bikes, hand tricycles, and cargo bikes. This makes up about 8% of riders, as most opt for traditional bikes. A majority of Cyclistic users ride for leisure, and about 30% use Cyclistic for their daily commute to work.
 
