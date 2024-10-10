@@ -53,7 +53,7 @@ All code can be found [here]()
 * Calculate ride length
 * Remove bad data
 * Calculate number of weekly rides, duration of weekly rides, and average duration by season
-* Create dashboards
+* Create charts
 
 
 ## 4. Analyze Data
@@ -67,5 +67,6 @@ With the data cleaned and aggregated, the new dataset contains # rows and shows 
 
 ## 5. Recommendations
 
-Cyclistic should create new plans that appeal to the needs of Casual riders. This plan would be most effective if it only included weekends over the course of a year. The weekend plan should be available at a lower price than the standard annual membership, to appeal to customers riding for leisure.
-As all rides increase during the summer, it would also be beneficial to introduce a seasonal plan for all of the seasons. It can be priced at a quarter of the value of the annual membership. This will allow customers the option to try out the annual plan during a busier time and can generate more interest in the annual plan to convert casual riders to annual members.
+* Cyclistic should create new plans that appeal to the needs of Casual riders.
+* A plan to implement would only include weekends over the course of a year. The weekend plan should be available at a lower price than the standard annual membership, to appeal to customers riding for leisure.
+* As quantity of rides increase during the summer, a seasonal plan should also be introduced for all of the seasons. This plan can be priced at a quarter of the value of the annual membership. This will allow customers the option to try out the annual plan during a busier time and can generate more interest in the annual plan to convert casual riders to annual members.
