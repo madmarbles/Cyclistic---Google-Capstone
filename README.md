@@ -1,4 +1,4 @@
-# Cyclistic - Google-Capstone
+# Cyclistic - Google Capstone
 **Case study: How does a bike-share company navigate speedy success?**
 The final capstone project for the Google Data Analytics Professional Certificate on Coursera.
 
@@ -57,7 +57,12 @@ All code can be found [here]()
 
 ## 4. Analyze Data
 
-With the data cleaned and aggregated, the new dataset shows that annual members make up 76.7% of Cyclistic's total customers, and casual riders make up 23.3%. Annual members generally have a greater quantity of rides, but casual memebrs are more likely to take longer rides. All rides increase during the summer. Annual members likely ride for their commute to work, leading to an increase in rides on weekdays.
+With the data cleaned and aggregated, the new dataset contains # rows and shows that annual members make up 76.7% of Cyclistic's total customers, and casual riders make up 23.3%. Annual members generally have a greater quantity of rides, but casual memebrs are more likely to take longer rides. All rides increase during the summer. Annual members likely ride for their commute to work, leading to an increase in rides on weekdays.
+
+ ![Riders by Day of Week]()
+ ![Riders by Month]()
+ ![Average Duration of Rides by Weekday]()
+ ![Average Duration of Rides by Month]()
 
 ## 5. Recommendations
 
