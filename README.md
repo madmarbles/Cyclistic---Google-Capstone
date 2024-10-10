@@ -60,10 +60,8 @@ All code can be found [here]()
 
 With the data cleaned and aggregated, the new dataset contains # rows and shows that annual members make up 76.7% of Cyclistic's total customers, and casual riders make up 23.3%. Annual members generally have a greater quantity of rides, but casual memebrs are more likely to take longer rides. All rides increase during the summer. Annual members likely ride for their commute to work, leading to an increase in rides on weekdays.
 
- ![Riders by Day of Week](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/quantity_weekday.png)
- ![Riders by Month](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/quantity_month.png)
- ![Average Duration of Rides by Weekday](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/duration_weekday.png)
- ![Average Duration of Rides by Month](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/duration_month.png)
+ ![Riders by Day of Week](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/quantity_weekday.png)  ![Riders by Month](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/quantity_month.png)
+ ![Average Duration of Rides by Weekday](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/duration_weekday.png)  ![Average Duration of Rides by Month](https://github.com/madmarbles/Cyclistic---Google-Capstone/blob/main/duration_month.png)
 
 ## 5. Recommendations
 
