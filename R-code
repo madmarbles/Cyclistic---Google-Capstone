@@ -6,10 +6,10 @@ library(lubridate)
 
 ## Open necessary files
 
+q1_2020 <- read_csv("Divvy_Trips_2020_Q1.csv")
 q2_2019 <- read_csv("Divvy_Trips_2019_Q2.csv")
 q3_2019 <- read_csv("Divvy_Trips_2019_Q3.csv")
 q4_2019 <- read_csv("Divvy_Trips_2019_Q4.csv")
-q1_2020 <- read_csv("Divvy_Trips_2020_Q1.csv")
 
 ## Compare column names
 colnames(q1_2019)
@@ -18,6 +18,17 @@ colnames(q3_2019)
 colnames(q4_2020)
 
 ## Rename inconsistent column names
+(q1_2019 <- rename(q1_2019,
+                   ride_id = "trip_id",
+                   rideable_type = "bikeid",
+                   started_at = "start_time",
+                   ended_at = "end_time",
+                   start_station_name = "from_station_name",
+                   start_station_id = "from_station_id",
+                   end_station_name = "to_station_name",
+                   end_station_id = "to_station_id",
+                   member_casual = "usertype"))
+
 (q2_2019 <- rename(q2_2019,
                    ride_id = "V1",
                    rideable_type = "V4",
@@ -30,7 +41,7 @@ colnames(q4_2020)
                    member_casual = "V10"))
 
 ## Remove previous header row
-df_q2_2019 <- q2_2019[-c(1), ]
+q2_2019 <- q2_2019[-c(1), ]
 
 (q3_2019 <- rename(q3_2019,
                    ride_id = "trip_id",
@@ -65,7 +76,7 @@ q1_2019 <- mutate(q1_2019, ride_id = as.character(ride_id),
                   rideable_type = as.character(rideable_type),
                   start_station_id = as.character(start_station_id),
                   end_station_id = as.character(end_station_id))
-df_q2_2019 <- mutate(df_q2_2019, ride_id = as.character(ride_id),
+q2_2019 <- mutate(q2_2019, ride_id = as.character(ride_id),
                   rideable_type = as.character(rideable_type),
                   start_station_id = as.character(start_station_id),
                   end_station_id = as.character(end_station_id))
@@ -79,7 +90,7 @@ q4_2019 <- mutate(q4_2019, ride_id = as.character(ride_id),
                   end_station_id = as.character(end_station_id))
 
 ## Combine all data frames
-all_trips <- bind_rows(q1_2019,df_q2_2019,q3_2019,q4_2019)
+all_trips <- bind_rows(q1_2019,q2_2019,q3_2019,q4_2019)
 
 ## Remove irrelevant columns
 all_trips <- all_trips%>%
@@ -150,20 +161,11 @@ all_trips_v2 %>%
   summarise(count = n()) %>%
   ggplot(aes(x = day_of_week, y = count, fill = member_casual)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Number of Riders by Day of Week",
+  scale_x_discrete(limits = c("Sunday","Monday","Tuesday", "Wednesday","Thursday",
+                              "Friday","Saturday","Sunday"))+
+    labs(title = "Number of Riders by Day of Week",
        x = "Day of Week",
        y = "Count") +
-  theme_minimal()
-
-## Create Chart for duration
-all_trips_v2 %>%
-  group_by(day_of_week, member_casual) %>%
-  summarise(average_ride_length = mean(ride_length, na.rm = TRUE)) %>%
-  ggplot(aes(x = day_of_week, y = average_ride_length, fill = member_casual)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  labs(title = "Average Ride Length by Day of Week and Member Type",
-       x = "Day of Week",
-       y = "Average Ride Length") +
   theme_minimal()
 
 ## Create Chart for quantity by month
@@ -172,7 +174,35 @@ all_trips_v2 %>%
   summarise(count = n()) %>%
   ggplot(aes(x = month, y = count, fill = member_casual)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Number of Riders by Month",
+  scale_x_discrete(limits = c("January","February","March", "April","May",
+                              "June","July","August","September","October","November","December"))+
+    labs(title = "Number of Riders by Month",
        x = "Month",
        y = "Count") +
+  theme_minimal()
+
+## Create Chart for duration by day
+all_trips_v2 %>%
+  group_by(day_of_week, member_casual) %>%
+  summarise(average_ride_length = mean(ride_length, na.rm = TRUE)) %>%
+  ggplot(aes(x = day_of_week, y = average_ride_length, fill = member_casual)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(limits = c("Sunday","Monday","Tuesday", "Wednesday","Thursday",
+                              "Friday","Saturday","Sunday"))+
+    labs(title = "Average Ride Length by Day of Week and Member Type",
+       x = "Day of Week",
+       y = "Average Ride Length") +
+  theme_minimal()
+
+## Create Chart for duration by month
+all_trips_v2 %>%
+  group_by(month, member_casual) %>%
+  summarise(average_ride_length = mean(ride_length, na.rm = TRUE)) %>%
+  ggplot(aes(x = month, y = average_ride_length, fill = member_casual)) +
+  geom_bar(stat = "identity", position = position_dodge())+
+  scale_x_discrete(limits = c("January","February","March", "April","May",
+                              "June","July","August","September","October","November","December"))+
+  labs(title = "Average Ride Length by Month and Member Type",
+       x = "Month",
+       y = "Average Ride Length") +
   theme_minimal()
