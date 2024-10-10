@@ -1,4 +1,4 @@
-# Cyclistic---Google-Capstone
+# Cyclistic - Google-Capstone
 **Case study: How does a bike-share company navigate speedy success?**
 The final capstone project for the Google Data Analytics Professional Certificate on Coursera.
 
